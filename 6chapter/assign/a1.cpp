@@ -1,14 +1,8 @@
 #include<iostream>
 
-
-
-
 using namespace std;
 
-
-
 int main(){
-    
     int n;
     cin>>n;
     int *ptr,*p_1,*p_2;
@@ -18,7 +12,6 @@ int main(){
     p_1 = new int[n];
     for (int i=0;i<n;i++){
         cin>>*(ptr+i);
-        
     }
     int tmp=0,sum=0;
     int flag = 1,counter=0;
@@ -35,14 +28,12 @@ int main(){
         
     }
     for (int i=0;i<n;i++){
-        
         if (*(ptr+i) >=0){
             pos = true;
             chain_p+=ptr[i];
         }
         else{
             if (ptr[i] > chain_n){
-                
                 chain_n = ptr[i];
             }
             if (chain_p>old_p){old_p=chain_p;}
@@ -50,13 +41,10 @@ int main(){
         }
 //      cout<<"chain_p"<<chain_p<<" chain_n"<<chain_n<<endl;
     }
-
     if (pos){
-    
         cout<<(chain_p>old_p?chain_p:old_p);
     }
     else{
-    
         cout<<chain_n;
     }
 
